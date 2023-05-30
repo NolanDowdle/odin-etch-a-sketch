@@ -1,16 +1,20 @@
+/* initialize container */
 const container = document.querySelector('#container');
 container.setAttribute('style', 'display: flex; flex-direction: column; flex: 1 1 content; height: 100vh;')
+
+/* create the divs for number of lines (rows) */
 const line1 = document.createElement('div');
 const line2 = document.createElement('div');
 const line3 = document.createElement('div');
 const line4 = document.createElement('div');
 
+/* add the line divs we created to the container */
 container.appendChild(line1);
 container.appendChild(line2);
 container.appendChild(line3);
 container.appendChild(line4);
 
-
+/* create each block inside the line */
 const line1block1 = document.createElement('div');
 const line1block2 = document.createElement('div');
 const line1block3 = document.createElement('div');
@@ -31,6 +35,7 @@ const line4block2 = document.createElement('div');
 const line4block3 = document.createElement('div');
 const line4block4 = document.createElement('div');
 
+/* add the blocks to be children of each line */
 line1.appendChild(line1block1);
 line1.appendChild(line1block2);
 line1.appendChild(line1block3);
@@ -56,31 +61,13 @@ line2.classList.add('line2');
 line3.classList.add('line3');
 line4.classList.add('line4');
 
-line1block1.setAttribute('id', 'line1block1');
-line1block2.setAttribute('id', 'line1block2');
-line1block3.setAttribute('id', 'line1block3');
-line1block4.setAttribute('id', 'line1block4');
-
-line2block1.setAttribute('id', 'line2block1');
-line2block2.setAttribute('id', 'line2block2');
-line2block3.setAttribute('id', 'line2block3');
-line2block4.setAttribute('id', 'line2block4');
-
-line3block1.setAttribute('id', 'line3block1');
-line3block2.setAttribute('id', 'line3block2');
-line3block3.setAttribute('id', 'line3block3');
-line3block4.setAttribute('id', 'line3block4');
-
-line4block1.setAttribute('id', 'line4block1');
-line4block2.setAttribute('id', 'line4block2');
-line4block3.setAttribute('id', 'line4block3');
-line4block4.setAttribute('id', 'line4block4');
-
+/* set attributes of the lines */
 line1.setAttribute('style', 'border: 1px solid black; display: flex; flex: 1 1 auto;');
 line2.setAttribute('style', 'border: 1px solid black; display: flex; flex: 1 1 auto;');
 line3.setAttribute('style', 'border: 1px solid black; display: flex; flex: 1 1 auto;');
 line4.setAttribute('style', 'border: 1px solid black; display: flex; flex: 1 1 auto;');
 
+/* initialize the size and borders of the blocks */
 line1block1.setAttribute('style', 'border: 1px solid black; display: flex; flex-direction: row; flex: 1 1 auto;');
 line1block2.setAttribute('style', 'border: 1px solid black; display: flex; flex-direction: row; flex: 1 1 auto;');
 line1block3.setAttribute('style', 'border: 1px solid black; display: flex; flex-direction: row; flex: 1 1 auto;');
@@ -100,3 +87,19 @@ line4block1.setAttribute('style', 'border: 1px solid black; display: flex; flex-
 line4block2.setAttribute('style', 'border: 1px solid black; display: flex; flex-direction: row; flex: 1 1 auto;');
 line4block3.setAttribute('style', 'border: 1px solid black; display: flex; flex-direction: row; flex: 1 1 auto;');
 line4block4.setAttribute('style', 'border: 1px solid black; display: flex; flex-direction: row; flex: 1 1 auto;');
+
+/* return random color */
+const getRandomColor = function() {
+    return Math.floor(Math.random() * 255);
+}
+
+/* Set mouseenter and mouseleave events for color */
+line1block1.addEventListener('mouseenter', () => {
+    var color1 = getRandomColor();
+    var color2 = getRandomColor();
+    var color3 = getRandomColor();
+    line1block1.setAttribute('style', `border: 1px solid black; display: flex; flex-direction: row; flex: 1 1 auto; background-color: rgb(${color1}, ${color2}, ${color3});`);
+});
+line1block1.addEventListener('mouseleave', () => {
+    line1block1.setAttribute('style', `border: 1px solid black; display: flex; flex-direction: row; flex: 1 1 auto; background-color: white;`);
+});
