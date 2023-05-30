@@ -1,4 +1,5 @@
 const container = document.querySelector('#container');
+container.setAttribute('style', 'display: flex; flex-direction: column; flex: 1 1 content; height: 100vh;')
 const line1 = document.createElement('div');
 const line2 = document.createElement('div');
 const line3 = document.createElement('div');
