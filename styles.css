@@ -4,6 +4,12 @@ body {
     background: #000;
     overflow: hidden;
 }
+
+.button {
+    background-color:aqua;
+    border: 1px solid blue;
+    border-radius: 10%;
+}
   
 .pointer {
     position: absolute;
